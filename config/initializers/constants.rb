@@ -1,0 +1,1 @@
+TEST_GURU_VERSION = 'O.0.1'.freeze
