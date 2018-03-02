@@ -6,24 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create([
-              {
-                username: 'shao_kahn',
-                password: 'password',
-                firstname: 'Shao',
-                lastname: 'Kahn',
-                email: 'shao.kahn@admin.com',
-                role: 'admin',
-              },
-              {
-                username: 'johny_cage',
-                password: 'password',
-                firstname: 'Johny',
-                lastname: 'Cage',
-                email: 'johny.cage@mail.com',
-                role: 'user',
-              }
-            ])
+users = User.create([
+                      {
+                        username: 'shao_kahn',
+                        password: 'password',
+                        firstname: 'Shao',
+                        lastname: 'Kahn',
+                        email: 'shao.kahn@admin.com',
+                        role: 'admin',
+                      },
+                      {
+                        username: 'johny_cage',
+                        password: 'password',
+                        firstname: 'Johny',
+                        lastname: 'Cage',
+                        email: 'johny.cage@mail.com',
+                        role: 'user',
+                      }
+                    ]).index_by(&:username)
 
 categories = Category.create([
                                { title: 'Frontend' },
@@ -37,27 +37,32 @@ tests = Test.create([
                       {
                         title: 'Ruby',
                         level: 1,
-                        category: categories.fetch('Backend')
+                        category: categories.fetch('Backend'),
+                        author: users.fetch('shao_kahn')
                       },
                       {
                         title: 'Ruby on Rails',
                         level: 2,
-                        category: categories.fetch('Backend')
+                        category: categories.fetch('Backend'),
+                        author: users.fetch('shao_kahn')
                       },
                       {
                         title: 'Swift',
                         level: 2,
-                        category: categories.fetch('Mobile Development')
+                        category: categories.fetch('Mobile Development'),
+                        author: users.fetch('johny_cage')
                       },
                       {
                         title: 'JavaScript',
                         level: 1,
-                        category: categories.fetch('Frontend')
+                        category: categories.fetch('Frontend'),
+                        author: users.fetch('johny_cage')
                       },
                       {
                         title: 'React/Redux',
                         level: 3,
-                        category: categories.fetch('Frontend')
+                        category: categories.fetch('Frontend'),
+                        author: users.fetch('johny_cage')
                       }
                     ]).index_by(&:title)
 
