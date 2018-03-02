@@ -66,6 +66,11 @@ tests = Test.create([
                       }
                     ]).index_by(&:title)
 
+TestsUser.create([
+                   { user: users.fetch('johny_cage'), test: tests.fetch('Ruby') },
+                   { user: users.fetch('johny_cage'), test: tests.fetch('Ruby on Rails') }
+                 ])
+
 questions = Question.create([
                               {
                                 body: 'What is the difference between calling super and calling super()?',
