@@ -4,10 +4,10 @@ class Test < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
   belongs_to :category
 
-  def self.tests_by_category(category)
+  def self.by_category(category)
     joins(:category)
       .where(categories: { title: category })
-      .order(:title)
+      .order(title: :desc)
       .pluck(:title)
   end
 end
