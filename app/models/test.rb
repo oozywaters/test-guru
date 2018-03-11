@@ -18,6 +18,9 @@ class Test < ActiveRecord::Base
     joins(:category)
       .where(categories: { title: category })
       .order(title: :desc)
-      .pluck(:title)
   }
+
+  def self.titles_by_category(category)
+    by_category(category).pluck(:title)
+  end
 end
