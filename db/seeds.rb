@@ -95,10 +95,9 @@ questions = [
 ]
 
 questions.each do |question|
-  question.answers = Answer.create([
-                                     { text: 'Yes', question: question },
-                                     { text: 'No', question: question },
-                                     { text: 'Maybe', question: question },
-                                     { text: 'I dunno', question: question }
-                                   ])
+  question.answers << Answer.new(text: 'Yes', question: question)
+  question.answers << Answer.new(text: 'No', question: question)
+  question.answers << Answer.new(text: 'Maybe', question: question)
+  question.answers << Answer.new(text: 'I dunno', question: question)
+  question.save!
 end
