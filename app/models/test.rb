@@ -1,4 +1,8 @@
 class Test < ActiveRecord::Base
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true }, inclusion: 1..10
+  validates :title, uniqueness: { scope: :level }
+
   has_many :tests_users
   has_many :users, through: :tests_users
   belongs_to :author, class_name: 'User'
