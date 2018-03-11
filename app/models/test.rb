@@ -10,10 +10,10 @@ class Test < ActiveRecord::Base
   scope :medium, -> { by_level(2..4) }
   scope :hard, -> { by_level(5..Float::INFINITY) }
 
-  def self.by_category(category)
+  scope :by_category, ->(category) {
     joins(:category)
       .where(categories: { title: category })
       .order(title: :desc)
       .pluck(:title)
-  end
+  }
 end
