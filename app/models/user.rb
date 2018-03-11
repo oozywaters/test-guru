@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :login, :password, :email, presence: true
+  validates :username, :password, :email, presence: true
 
   has_many :tests_user
   has_many :tests, through: :tests_user
