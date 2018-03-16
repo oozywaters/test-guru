@@ -1,13 +1,9 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show]
+  before_action :find_question, only: %i[show destroy edit update]
 
   def new
     @question = @test.questions.build
-  end
-
-  def show
-    render json: @question
   end
 
   def create
@@ -19,6 +15,11 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to test_path(@question.test)
   end
 
   private

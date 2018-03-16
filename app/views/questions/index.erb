@@ -1,7 +1,9 @@
 <h1><%= @test.title %> test questions:</h1>
 <ul>
   <% @test.questions.each do |question| %>
-  <li><%= question.body %></li>
+  <li>
+    <%= link_to question.body, question_path(question) %>
+  </li>
   <% end %>
 </ul>
-<%= link_to 'Back', :root %> | <%= link_to 'Add new question', :new_test_question %>
+<%= link_to 'Go Back', :root %> | <%= link_to 'Add new question', :new_test_question %>
