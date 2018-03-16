@@ -1,0 +1,7 @@
+<h1><%= @test.title %> test questions:</h1>
+<ul>
+  <% @test.questions.each do |question| %>
+  <li><%= question.body %></li>
+  <% end %>
+</ul>
+<%= link_to(:new_test_question) { 'Add new question' } %>
