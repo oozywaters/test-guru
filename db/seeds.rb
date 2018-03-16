@@ -71,32 +71,33 @@ TestsUser.create([
                    { user: users.fetch('johny_cage'), test: tests.fetch('Ruby on Rails') }
                  ])
 
-questions = Question.create([
-                              {
-                                body: 'What is the difference between calling super and calling super()?',
-                                test: tests.fetch('Ruby')
-                              },
-                              {
-                                body: 'Can you call a private method outside a Ruby class using its object?',
-                                test: tests.fetch('Ruby')
-                              },
-                              {
-                                body: 'In Swift enumerations, what’s the difference between raw values and associated values?',
-                                test: tests.fetch('Swift')
-                              },
-                              {
-                                body: 'What is NaN? What is its type? How can you reliably test if a value is equal to NaN?',
-                                test: tests.fetch('JavaScript')
-                              },
-                              {
-                                body: 'What is JSX?',
-                                test: tests.fetch('React/Redux')
-                              }
-                            ])
+questions = [
+  Question.new(
+    body: 'What is the difference between calling super and calling super()?',
+    test: tests.fetch('Ruby'),
+  ),
+  Question.new(
+    body: 'Can you call a private method outside a Ruby class using its object?',
+    test: tests.fetch('Ruby')
+  ),
+  Question.new(
+    body: 'In Swift enumerations, what’s the difference between raw values and associated values?',
+    test: tests.fetch('Swift')
+  ),
+  Question.new(
+    body: 'What is NaN? What is its type? How can you reliably test if a value is equal to NaN?',
+    test: tests.fetch('JavaScript')
+  ),
+  Question.new(
+    body: 'What is JSX?',
+    test: tests.fetch('React/Redux')
+  )
+]
 
-Answer.create([
-                { text: 'Yes', question: questions.fetch(0) },
-                { text: 'No', question: questions.fetch(1) },
-                { text: 'Maybe', question: questions.fetch(2) },
-                { text: 'I dunno', question: questions.fetch(3) }
-              ])
+questions.each do |question|
+  question.answers << Answer.new(text: 'Yes', question: question)
+  question.answers << Answer.new(text: 'No', question: question)
+  question.answers << Answer.new(text: 'Maybe', question: question)
+  question.answers << Answer.new(text: 'I dunno', question: question)
+  question.save!
+end
