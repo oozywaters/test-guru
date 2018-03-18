@@ -1,3 +1,4 @@
+<%= render 'shared/flash' %>
 <h1><%= @test.title %> test questions:</h1>
 <ul>
   <% @test.questions.each do |question| %>
@@ -6,4 +7,4 @@
   </li>
   <% end %>
 </ul>
-<%= link_to 'Go Back', :root %> | <%= link_to 'Add new question', :new_test_question %>
+<%= link_to 'Go Back', :root %> | <%= link_to 'Add new question', new_test_question_path %>

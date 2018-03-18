@@ -1,7 +1,10 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy edit update]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+
+  def index; end
 
   def new
     @question = @test.questions.build
@@ -9,9 +12,8 @@ class QuestionsController < ApplicationController
 
   def create
     @question = @test.questions.build(question_params)
-    @question.answers << Answer.new(text: 'Yes', question: @question)
 
-    if @question.save!
+    if @question.save
       redirect_to test_questions_path(@test)
     else
       render :new
@@ -21,6 +23,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to test_path(@question.test)
+    flash[:notice] = 'Question removed successfully'
   end
 
   private
