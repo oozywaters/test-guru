@@ -1,8 +1,13 @@
-<h1>Tests</h1>
-<ul>
-  <% @tests.each do |test| %>
-    <li>
-      <%= link_to test.title, test_questions_path(test) %>
-    </li>
-  <% end %>
-</ul>
+<h1>Tests:</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Questions</th>
+    <th colspan="3">Action</th>
+  </tr>
+
+  <%= render @tests %>
+</table>
+<br>
+<%= link_to 'Add New Test', new_test_path %>

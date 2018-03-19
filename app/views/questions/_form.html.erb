@@ -1,7 +1,9 @@
 <%= form_for [@test, @question], local: true do |form| %>
+  <%= render 'shared/errors', resource: @question %>
+
   <p>
     <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, rows: 10, cols: 100 %>
   </p>
 
   <p>
