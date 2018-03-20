@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to test_questions_path(@test)
+      redirect_to @question.test
     else
       render :new
     end
@@ -22,8 +22,16 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test)
+    redirect_to @question.test
     flash[:notice] = 'Question removed successfully'
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   private
