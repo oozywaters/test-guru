@@ -1,7 +1,12 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result]
 
-  def show; end
+  def show;
+    if @test_passage.questions_count == 0
+      flash[:notice] = 'This test has no questions yet.'
+      redirect_to tests_path
+    end
+  end
 
   def result; end
 
