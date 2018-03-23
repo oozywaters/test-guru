@@ -19,8 +19,17 @@ class TestPassage < ActiveRecord::Base
     test.questions.count
   end
 
+  def success_rate
+    correct_questions * 100 / questions_count
+  end
+
   def completed?
     current_question.nil?
+  end
+
+  def passed?
+    return false unless completed?
+    success_rate > 85
   end
 
   private

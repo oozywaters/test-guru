@@ -90,7 +90,7 @@ questions = [
 ]
 
 questions.each do |question|
-  question.answers << Answer.new(text: 'Yes', question: question)
+  question.answers << Answer.new(text: 'Yes', question: question, correct: true)
   question.answers << Answer.new(text: 'No', question: question)
   question.answers << Answer.new(text: 'Maybe', question: question)
   question.answers << Answer.new(text: 'I dunno', question: question)
