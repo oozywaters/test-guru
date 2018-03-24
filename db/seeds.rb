@@ -66,16 +66,11 @@ tests = Test.create([
                       }
                     ]).index_by(&:title)
 
-TestsUser.create([
-                   { user: users.fetch('johny_cage'), test: tests.fetch('Ruby') },
-                   { user: users.fetch('johny_cage'), test: tests.fetch('Ruby on Rails') }
-                 ])
-
 questions = [
   Question.new(
     body: 'What is the difference between calling super and calling super()?',
     test: tests.fetch('Ruby'),
-  ),
+    ),
   Question.new(
     body: 'Can you call a private method outside a Ruby class using its object?',
     test: tests.fetch('Ruby')
@@ -95,9 +90,14 @@ questions = [
 ]
 
 questions.each do |question|
-  question.answers << Answer.new(text: 'Yes', question: question)
+  question.answers << Answer.new(text: 'Yes', question: question, correct: true)
   question.answers << Answer.new(text: 'No', question: question)
   question.answers << Answer.new(text: 'Maybe', question: question)
   question.answers << Answer.new(text: 'I dunno', question: question)
   question.save!
 end
+
+TestPassage.create([
+                     { user: users.fetch('johny_cage'), test: tests.fetch('Ruby') },
+                     { user: users.fetch('johny_cage'), test: tests.fetch('Ruby on Rails') }
+                   ])
