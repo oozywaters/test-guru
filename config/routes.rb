@@ -6,11 +6,15 @@ Rails.application.routes.draw do
 
   post :logout, to: 'sessions#destroy'
 
-  resources :tests, shallow: true do
-    resources :questions
-
+  resources :tests, only: :index do
     member do
       post :start
+    end
+  end
+
+  namespace :admin do
+    resources :tests, shallow: true do
+      resources :questions
     end
   end
 
