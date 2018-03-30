@@ -27,6 +27,10 @@ class User < ApplicationRecord
     test_passages.order(created_at: :desc).find_by(test_id: test.id)
   end
 
+  def fullname
+    "#{firstname} #{lastname}"
+  end
+
   def admin?
     is_a?(Admin)
   end
