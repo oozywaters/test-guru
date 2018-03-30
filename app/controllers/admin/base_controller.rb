@@ -1,10 +1,10 @@
 class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_required!
+  before_action :restrict_users
 
   private
 
-  def admin_required!
-    redirect_to root_path
+  def restrict_users
+    redirect_to root_path unless current_user.admin?
   end
 end
