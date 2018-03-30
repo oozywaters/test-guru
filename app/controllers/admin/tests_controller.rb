@@ -1,5 +1,6 @@
 class Admin::TestsController < Admin::BaseController
   before_action :find_test, only: %i[show edit update destroy start]
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
@@ -12,10 +13,10 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.tests_created.build(test_params)
 
     if @test.save
-      redirect_to @test
+      redirect_to [:admin, @test], notice: 'Test created successfully'
     else
       render :new
     end
@@ -25,7 +26,7 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.find(params[:id])
 
     if @test.save
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :edit
     end
@@ -49,5 +50,9 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def rescue_with_test_not_found
+    render plain: 'Test not found', status: 404
   end
 end
