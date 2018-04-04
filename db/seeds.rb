@@ -13,7 +13,7 @@ users = User.create([
                         firstname: 'Shao',
                         lastname: 'Kahn',
                         email: 'shao.kahn@admin.com',
-                        role: 'admin',
+                        type: 'Admin',
                       },
                       {
                         username: 'johny_cage',
@@ -21,7 +21,6 @@ users = User.create([
                         firstname: 'Johny',
                         lastname: 'Cage',
                         email: 'johny.cage@mail.com',
-                        role: 'user',
                       }
                     ]).index_by(&:username)
 

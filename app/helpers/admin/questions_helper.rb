@@ -1,4 +1,4 @@
-module QuestionsHelper
+module Admin::QuestionsHelper
   def question_header(question)
     if question.persisted?
       "Edit #{question.test.title} question"

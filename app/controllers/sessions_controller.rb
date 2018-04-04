@@ -1,25 +1,6 @@
-class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!
-
-  def new
-    redirect_to root_path if logged_in?
-  end
-
+class SessionsController < Devise::SessionsController
   def create
-    user = User.find_by(email: params[:email])
-
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to cookies[:path] || tests_path
-      cookies.delete(:path)
-    else
-      flash.now[:alert] = 'Wrong email or password'
-      render :new
-    end
-  end
-
-  def destroy
-    session.delete(:user_id)
-    redirect_to login_path
+    super
+    set_flash_message(:notice, :signed_in_greeting, fullname: current_user.fullname)
   end
 end
