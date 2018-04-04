@@ -2,11 +2,11 @@ en:
   activerecord:
     models:
       test: "Test"
-      question: "Question"
 
     attributes:
       test:
         title: "Title"
+        category_id: "Category"
 
     errors:
       messages:

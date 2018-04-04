@@ -1,2 +1,39 @@
 ru:
   hello: "Привет, мир!"
+  back: "Назад"
+  new_test: "Создать новый тест"
+  new_question: "Добавить вопрос"
+  show: "Открыть"
+  edit: "Редактировать"
+  delete: "Удалить"
+  sign_up: "Зарегистрироваться"
+  sign_in: "Войти"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      action: "Действие"
+    test:
+      start: "Начать"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        action: "Действие"
+      show:
+        header: "Тест %{title} (вопросов %{count})"
+        question: "Вопрос"
+        action: "Действие"
+      edit:
+        header: "Редактировать тест"
+      form:
+        selector: "Выберите категорию"
