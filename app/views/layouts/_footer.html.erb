@@ -1,7 +1,16 @@
-<footer>
-    <p>Test-Guru &copy; <%= current_year %></p>
-    <p><%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: :blank %></p>
-    <p>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        Test-Guru &copy; <%= current_year %>
+        <br>
+        <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: :blank %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
         Vyacheslav Zavertanniy | <%= github_url('oozywaters', 'test-guru') %>
-    </p>
+      </div>
+    </div>
+  </div>
 </footer>
