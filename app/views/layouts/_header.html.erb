@@ -1,4 +1,4 @@
-<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="navbar navbar-expand-lg navbar-dark bg-dark header">
   <a href="/" class="navbar-brand">Test Guru</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -6,9 +6,9 @@
   <div class="collapse navbar-collapse justify-content-md-end" id="navbarCustom">
     <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <p>Welcome,
+        <span class="navbar-text">Welcome,
           <%= current_user.email %>
-        </p>
+        </span>
         <li class="nav-item">
           <%= link_to 'Guru', root_path, class: 'nav-link' %>
         </li>
