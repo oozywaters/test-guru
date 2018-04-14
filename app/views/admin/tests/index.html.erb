@@ -1,13 +1,29 @@
-<h1><%= t('.header') %></h1>
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.questions') %></th>
-    <th colspan="3"><%= t('.action') %></th>
-  </tr>
-
-  <%= render @tests %>
-</table>
-<br>
-<%= link_to t('new_test'), new_admin_test_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= t('.header') %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t('.title') %></th>
+            <th><%= t('.level') %></th>
+            <th><%= t('.questions') %></th>
+            <th colspan="3"><%= t('.action') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @tests %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= link_to t('new_test'), new_admin_test_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
