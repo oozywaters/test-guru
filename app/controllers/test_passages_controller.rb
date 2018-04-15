@@ -36,6 +36,13 @@ class TestPassagesController < ApplicationController
 
   private
 
+  def create_gist!(url)
+    current_user.gists.create!(
+      question: @test_passage.current_question,
+      url: url
+    )
+  end
+
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
