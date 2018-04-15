@@ -7,6 +7,12 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item">
+          <%= link_to 'Admin', admin_tests_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
           <%= link_to 'Guru', root_path, class: 'nav-link' %>
         </li>
         <span class="navbar-text">Welcome,
