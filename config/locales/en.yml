@@ -55,7 +55,7 @@ en:
     result:
       header: "The %{title} test was completed!"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist %{link} was successfully created!"
       failure: "An error occurred while saving gist"
 
   admin:
