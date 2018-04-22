@@ -1,5 +1,17 @@
-<h1><%= @question.test.title %> question</h1>
-
-<p><%= @question.body %></p>
-
-<%= link_to 'Go Back', admin_test_path(@question.test) %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= @question.test.title %> question</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p><%= @question.body %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Go Back', admin_test_path(@question.test) %>
+    </div>
+  </div>
+</div>

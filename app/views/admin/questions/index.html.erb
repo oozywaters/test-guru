@@ -1,11 +1,24 @@
-<h1><%= @test.title %> test questions:</h1>
-
-<table>
-  <tr>
-    <th>Question</th>
-    <th colspan="3">Action</th>
-  </tr>
-  <%= render @test.questions %>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= @test.title %> test questions:</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th colspan="3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @test.questions %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <%= link_to t('back'), :root %> | <%= link_to t('new_question'), new_admin_test_question_path %>

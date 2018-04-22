@@ -20,6 +20,13 @@ ru:
     test:
       start: "Начать"
 
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+    gist:
+      success: "Gist успешно сохранен %{link}"
+      failure: "Во время сохранения gist произошла ошибка"
+
   admin:
     tests:
       create:

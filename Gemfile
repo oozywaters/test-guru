@@ -27,6 +27,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# ENVIRONMENT
+gem 'dotenv-rails'
+
+# NETWORKING
+gem "octokit", "~> 4.0"
+
 # LOCALIZATION
 gem 'rails-i18n', '~> 5.0.0'
 

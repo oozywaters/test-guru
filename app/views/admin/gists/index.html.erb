@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th><%= t('activerecord.models.question') %></th>
+            <th>Gist</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @gists %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
