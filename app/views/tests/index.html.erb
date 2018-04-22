@@ -9,7 +9,11 @@
       <table class="table">
         <thead>
           <tr>
-            <th><%= t('.title') %></th>
+            <th class="sort-by-title pointer">
+              <%= t('.title') %>
+              <%= octicon 'arrow-up', class: 'text-success hide' %>
+              <%= octicon 'arrow-down', class: 'text-success hide' %>
+            </th>
             <th><%= t('.level') %></th>
             <th><%= t('.questions') %></th>
             <th><%= t('.action') %></th>
