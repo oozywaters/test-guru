@@ -76,3 +76,5 @@ en:
         header: "Edit test"
       form:
         selector: "Select category"
+      form_inline:
+        submit: "Ok"

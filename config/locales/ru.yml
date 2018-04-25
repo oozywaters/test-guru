@@ -45,3 +45,5 @@ ru:
         header: "Редактировать тест"
       form:
         selector: "Выберите категорию"
+      form_inline:
+        submit: "Ok"
