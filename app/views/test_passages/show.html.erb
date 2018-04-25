@@ -12,6 +12,15 @@
       </p>
     </div>
   </div>
+  <div class="progress mb-2">
+    <%= content_tag :div,
+                    class: 'progress-bar',
+                    data: {
+                        question_number: @test_passage.current_question_number,
+                        questions_count: @test_passage.questions_count
+                    } do %>
+    <% end %>
+  </div>
   <div class="row">
     <div class="col-12">
       <p>
