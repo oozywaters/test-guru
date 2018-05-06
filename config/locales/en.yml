@@ -41,6 +41,12 @@ en:
   sign_up: "Sign up"
   sign_in: "Sign in"
 
+  layouts:
+    navbar:
+      admin_root: "Admin panel"
+    footer:
+      feedback: 'Contact us'
+
   tests:
     index:
       header: 'Tricky tests'
@@ -78,3 +84,11 @@ en:
         selector: "Select category"
       form_inline:
         submit: "Ok"
+
+  feedbacks:
+    new:
+      header: 'Contact us'
+    form:
+      send_email: 'Send'
+    create:
+      success: "Feedback successfully sent. We'll connect yout soon."
