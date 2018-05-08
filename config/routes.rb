@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'feedback/new'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tests#index'
 
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
       post :start
     end
   end
+
+  resources :feedbacks, only: [:new, :create]
 
   namespace :admin do
     resources :tests do

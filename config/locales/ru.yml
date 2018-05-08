@@ -10,6 +10,12 @@ ru:
   sign_up: "Зарегистрироваться"
   sign_in: "Войти"
 
+  layouts:
+    navbar:
+      admin_root: "Панель администратора"
+    footer:
+      feedback: 'Обратная связь'
+
   tests:
     index:
       header: "Доступные тесты"
@@ -47,3 +53,11 @@ ru:
         selector: "Выберите категорию"
       form_inline:
         submit: "Ok"
+
+  feedbacks:
+    new:
+      header: 'Обратная связь'
+    form:
+      send_email: 'Отправить'
+    create:
+      success: 'Письмо отправлено! Скоро мы с вами свяжемся.'
