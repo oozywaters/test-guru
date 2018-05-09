@@ -1,4 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= image_tag(@badge.image) %>
+      <p>
+        <%= @badge.title %>
+      </p>
 
-<%= link_to 'Edit', edit_admin_badge_path(@admin_badge) %> |
-<%= link_to 'Back', admin_badges_path %>
+      <p>
+        <%= @badge.rule_parameter %>
+      </p>
+
+      <%= link_to t('edit'), edit_admin_badge_path(@badge) %> |
+      <%= link_to t('back'), admin_tests_path %>
+    </div>
+  </div>
+</div>
