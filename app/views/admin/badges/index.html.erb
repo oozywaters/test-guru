@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= t('.all_badges') %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= link_to t('.new_badge'), new_admin_badge_path, class: 'btn btn-primary' %>
+      <table class="table table-bordered mt-3">
+        <thead>
+        <tr>
+          <th><%= t('.name') %></th>
+          <th><%= t('.rule') %></th>
+          <th colspan="3"><%= t('.actions') %></th>
+        </tr>
+        </thead>
+        <tbody>
+          <%= render @badges %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
