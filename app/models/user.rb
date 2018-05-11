@@ -23,6 +23,10 @@ class User < ApplicationRecord
     test_passages.order(created_at: :desc).find_by(test_id: test.id)
   end
 
+  def passed_tests_by_category(category)
+    tests.where(category: category).distinct
+  end
+
   def fullname
     "#{firstname} #{lastname}"
   end
