@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= t('.all_badges') %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th><%= t('.image') %></th>
+          <th><%= t('.name') %></th>
+        </tr>
+        </thead>
+        <tbody>
+          <%= render Badge.all %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= t('.my_badges') %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th><%= t('.image') %></th>
+            <th><%= t('.name') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @badges %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
