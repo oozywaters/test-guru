@@ -5,12 +5,14 @@ class UserBadgesService
   end
 
   def call
-    Badge.all.each do |badge|
-      give_badge(badge) if send(badge.rule, badge.rule_parameter)
-    end
+    Badge.all.each { |badge| give_badge(badge) if badge_achieved?(badge) }
   end
 
   private
+
+  def badge_achieved?(badge)
+    send(badge.rule, badge.rule_parameter)
+  end
 
   def give_badge(badge)
     @user.badges << badge
