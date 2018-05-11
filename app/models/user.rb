@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :tests_created, class_name: 'Test', foreign_key: 'author_id'
   has_many :gists
+  has_many :user_badges
+  has_many :badges, through: :user_badges
 
   def tests_by_level(level)
     tests.by_level(level)

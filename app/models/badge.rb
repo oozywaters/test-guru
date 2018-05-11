@@ -5,6 +5,9 @@ BADGE_RULES = [
 ].freeze
 
 class Badge < ApplicationRecord
+  has_many :user_badges
+  has_many :users, through: :user_badges
+
   def self.rules
     BADGE_RULES
   end
