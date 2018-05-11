@@ -1,7 +1,7 @@
 BADGE_RULES = [
   ['Прохождение всех тестов категории', 'all_tests_by_category_passed?'],
-  ['Прохождение теста с первой попытки', 'condition2'],
-  ['Прохождение всех тестов определенного уровня', 'condition3']
+  ['Прохождение теста с первой попытки', 'passed_test_on_the_first_try?'],
+  ['Прохождение всех тестов определенного уровня', 'passed_all_tests_by_level?']
 ].freeze
 
 class Badge < ApplicationRecord
