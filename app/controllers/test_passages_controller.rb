@@ -17,6 +17,9 @@ class TestPassagesController < ApplicationController
       UserBadgesService.new(@test_passage).call
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
+    elsif @test_passage.time_is_out?
+      flash[:notice] = 'Time is out! Try again later.'
+      redirect_to result_test_passage_path(@test_passage)
     else
       render :show
     end

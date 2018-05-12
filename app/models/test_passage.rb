@@ -35,6 +35,10 @@ class TestPassage < ActiveRecord::Base
     (expires_at - Time.current).to_i
   end
 
+  def time_is_out?
+    timer <= 0
+  end
+
   private
 
   def expires_at
