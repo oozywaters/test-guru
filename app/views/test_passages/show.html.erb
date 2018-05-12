@@ -12,6 +12,13 @@
       </p>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+      <p>
+        Time left: <%= content_tag :span, '', id: 'timer', data: { timeleft: @test_passage.timer } %>
+      </p>
+    </div>
+  </div>
   <div class="progress mb-2">
     <%= content_tag :div,
                     class: 'progress-bar',

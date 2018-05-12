@@ -1,6 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
     var progress = document.querySelector('.progress-bar');
-    console.log(progress);
 
     if (progress) {
         var questionNumber = progress.dataset.questionNumber - 1;
