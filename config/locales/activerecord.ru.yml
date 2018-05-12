@@ -8,6 +8,11 @@ ru:
       test:
         title: "Название"
         category_id: "Категория"
+      badge:
+        title: "Название"
+        image: "Картинка"
+        rule: "Условие получения"
+        rule_parameter: "Параметр"
 
     errors:
       messages:
