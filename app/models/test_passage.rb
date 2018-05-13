@@ -31,7 +31,20 @@ class TestPassage < ActiveRecord::Base
     success_rate > 85
   end
 
+  def remaining_time
+    (expires_at - Time.current).to_i
+  end
+
+  def time_is_out?
+    remaining_time <= 0
+  end
+
   private
+
+  def expires_at
+    return created_at + 1.year unless test.timer
+    created_at + test.timer.seconds
+  end
 
   def correct_answer?(answer_ids)
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort

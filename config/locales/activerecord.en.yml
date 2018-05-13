@@ -7,6 +7,11 @@ en:
       test:
         title: "Title"
         category_id: "Category"
+      badge:
+        title: "Title"
+        image: "Image"
+        rule: "Rule"
+        rule_parameter: "Rule parameter"
 
     errors:
       messages:

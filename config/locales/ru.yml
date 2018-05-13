@@ -11,8 +11,9 @@ ru:
   sign_in: "Войти"
 
   layouts:
-    navbar:
+    header:
       admin_root: "Панель администратора"
+      my_badges: "Мои бейджи"
     footer:
       feedback: 'Обратная связь'
 
@@ -53,11 +54,24 @@ ru:
         selector: "Выберите категорию"
       form_inline:
         submit: "Ok"
+    badges:
+      index:
+        all_badges: "Все достижения"
+        new_badge: "Новое достижение"
+        image: "Изображение"
+        title: "Название"
+        actions: "Действия"
+      destroy:
+        success_destroy: "Бейдж успешно удален"
+      update:
+        success_update: "Бейдж успешно обновлен"
+      create:
+        success_create: "Бейдж создан"
 
   feedbacks:
     new:
-      header: 'Обратная связь'
+      header: "Обратная связь"
     form:
-      send_email: 'Отправить'
+      send_email: "Отправить"
     create:
-      success: 'Письмо отправлено! Скоро мы с вами свяжемся.'
+      success: "Письмо отправлено! Скоро мы с вами свяжемся."

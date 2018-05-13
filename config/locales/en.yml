@@ -42,8 +42,9 @@ en:
   sign_in: "Sign in"
 
   layouts:
-    navbar:
+    header:
       admin_root: "Admin panel"
+      my_badges: "My badges"
     footer:
       feedback: 'Contact us'
 
@@ -84,6 +85,19 @@ en:
         selector: "Select category"
       form_inline:
         submit: "Ok"
+    badges:
+      index:
+        all_badges: "All badges"
+        new_badge: "New badge"
+        image: "Image"
+        title: "Title"
+        actions: "Actions"
+      destroy:
+        success_destroy: 'Deletion of success was successful'
+      update:
+        success_update: 'Successfully updated'
+      create:
+        success_create: 'A new badge was created'
 
   feedbacks:
     new:

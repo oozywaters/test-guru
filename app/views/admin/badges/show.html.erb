@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= image_tag(@badge.image) %>
+      <p>
+        <%= @badge.title %>
+      </p>
+
+      <p>
+        <%= @badge.rule_parameter %>
+      </p>
+
+      <%= link_to t('edit'), edit_admin_badge_path(@badge) %> |
+      <%= link_to t('back'), admin_tests_path %>
+    </div>
+  </div>
+</div>
