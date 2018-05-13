@@ -31,17 +31,18 @@ class TestPassage < ActiveRecord::Base
     success_rate > 85
   end
 
-  def timer
+  def remaining_time
     (expires_at - Time.current).to_i
   end
 
   def time_is_out?
-    timer <= 0
+    remaining_time <= 0
   end
 
   private
 
   def expires_at
+    return created_at + 1.year unless test.timer
     created_at + test.timer.seconds
   end
 
