@@ -1,5 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
+  before_action :check_timer, only: %i[update]
 
   def show;
     if @test_passage.questions_count == 0
@@ -46,5 +47,12 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def check_timer
+    if @test_passage.time_is_out?
+      flash[:notice] = 'Time is out! Try again later.'
+      redirect_to result_test_passage_path(@test_passage)
+    end
   end
 end

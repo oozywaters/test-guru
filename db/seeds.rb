@@ -36,6 +36,7 @@ tests = Test.create([
                       {
                         title: 'Ruby',
                         level: 1,
+                        timer: 10,
                         category: categories.fetch('Backend'),
                         author: users.fetch('shao_kahn')
                       },
@@ -54,6 +55,7 @@ tests = Test.create([
                       {
                         title: 'JavaScript',
                         level: 1,
+                        timer: 10,
                         category: categories.fetch('Frontend'),
                         author: users.fetch('johny_cage')
                       },
